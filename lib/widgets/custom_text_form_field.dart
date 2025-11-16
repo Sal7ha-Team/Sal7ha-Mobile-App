@@ -46,12 +46,12 @@ class CustomTextFormField extends StatelessWidget {
           errorBorder: borderDecoration(colorBorder: Colors.red),
           focusedErrorBorder: borderDecoration(colorBorder: Colors.red),
           hintText: hintText,
-          hintStyle: hintStyle ?? AppStyles.medium16Black,
+          hintStyle: hintStyle ?? AppStyles.medium16black,
           labelText: labelText,
-          labelStyle: labelStyle ?? AppStyles.medium16Black,
+          labelStyle: labelStyle ?? AppStyles.medium16black,
           prefixIcon: prefixIcon,
           suffix: suffixIcon,
-          errorStyle: AppStyles.medium16Black.copyWith(
+          errorStyle: AppStyles.medium16black.copyWith(
               color: Colors.red
           ),
         filled: true,
