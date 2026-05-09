@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ThemeProvider extends ChangeNotifier{
-  // todo :to use this provider you must create an object in your widget then call method with new data
-
+class ThemeProvider extends ChangeNotifier {
   // data
   ThemeMode currentTheme = ThemeMode.light;
 
@@ -13,5 +11,9 @@ class ThemeProvider extends ChangeNotifier{
     }
     currentTheme = newTheme;
     notifyListeners();
+  }
+
+  bool isDarkMode() {
+    return currentTheme == ThemeMode.dark;
   }
 }
