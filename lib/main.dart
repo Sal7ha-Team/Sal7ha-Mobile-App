@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/providers/language_provider.dart';
-import 'package:graduation/providers/theme_provider.dart';
 import 'package:graduation/utils/app_routes.dart';
 import 'package:graduation/utils/app_theme.dart';
 import 'package:provider/provider.dart';
+import 'providers/language_provider.dart';
+import 'providers/theme_provider.dart';
 import 'l10n/app_localizations.dart';
 
 void main() {
@@ -23,20 +23,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var languageProvider = Provider.of<LanguageProvider>(context);
     var themeProvider = Provider.of<ThemeProvider>(context);
-
+    var languageProvider = Provider.of<LanguageProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // Application Routes
-      routes: {},
 
-      // todo : Localization
+      //------------------- Routing -------------------------
+      routes: AppRoutes.getroutes(),
+      initialRoute: AppRoutes.homeScreen,
+
+      // ------------------ Localization -------------------------
       locale: Locale(languageProvider.appLanguage),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
 
-      // todo : Themeing
+      //----------------------- Theming ----------------------------
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.currentTheme,
